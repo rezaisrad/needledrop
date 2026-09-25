@@ -1,0 +1,49 @@
+[project]
+name = "needledrop"
+version = "0.1.0"
+description = "Master a recorded vinyl DJ set: per-deck L/R balance, LUFS loudness with an oversampled true-peak limiter, trim and fades."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Reza Rad", email = "rezaisrad@users.noreply.github.com" }]
+requires-python = ">=3.11"
+keywords = ["vinyl", "dj", "mastering", "loudness", "lufs", "ebu-r128", "ffmpeg"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Sound/Audio :: Conversion",
+]
+dependencies = [
+    "numpy>=2.4.6",
+    "rich>=15.0.0",
+    "scipy>=1.17.1",
+    "soundfile>=0.14.0",
+    "typer>=0.27.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/rezaisrad/needledrop"
+Issues = "https://github.com/rezaisrad/needledrop/issues"
+
+[project.scripts]
+needledrop = "needledrop.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.11.1,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
